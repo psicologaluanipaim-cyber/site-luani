@@ -81,8 +81,15 @@ h3{font-size:1.35rem}
 .page-hero{max-width:1000px;margin:auto;padding:5rem 1.4rem 2rem}
 .page-hero h1{font-size:clamp(2.5rem,5vw,4.4rem);max-width:850px}
 .page-hero .lead{font-size:1.15rem;color:var(--muted);max-width:750px;margin:1.4rem 0 0}
-.home-modes{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}
-.home-modes span{display:inline-block;padding:.45rem .75rem;border:1px solid var(--line);border-radius:999px;color:var(--ink);background:rgba(255,255,255,.72);font-size:.86rem;font-weight:600}
+.home-modes{display:flex;flex-direction:column;align-items:flex-start;gap:.7rem;margin-top:1.7rem}
+.home-mode-button{display:flex;flex-direction:column;gap:.18rem;min-width:min(100%,25rem);padding:.8rem 1.05rem;border:1px solid var(--ink);border-radius:1rem;transition:.2s ease}
+.home-mode-button strong{font-size:.94rem;line-height:1.3}
+.home-mode-button small{font-size:.77rem;line-height:1.35}
+.home-mode-button.primary{background:var(--ink);color:#fff}
+.home-mode-button.primary small{color:#d9e7e2}
+.home-mode-button.secondary{background:rgba(255,255,255,.76);color:var(--ink)}
+.home-mode-button.secondary small{color:var(--muted)}
+.home-mode-button:hover,.home-mode-button:focus-visible{transform:translateY(-1px);box-shadow:0 8px 22px rgba(39,70,76,.16)}
 .quick-value-link{display:inline-block;margin-top:1.15rem;color:var(--blush-deep);font-weight:600;text-decoration:underline;text-underline-offset:.25rem}
 .about-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(16rem,21rem);gap:4rem;align-items:center;padding-bottom:3rem}
 .about-portrait{margin:0;aspect-ratio:5/6;border-radius:10rem 10rem var(--radius) var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#5d919a}
