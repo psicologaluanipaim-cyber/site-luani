@@ -284,4 +284,13 @@ function conversation(){return `${header()}<main><div class="page-hero"><div cla
 function legal(kind){const privacy=kind==='privacidade';return `${header()}<main><article class="legal"><div class="eyebrow">Informações legais</div><h1>${privacy?'Política de privacidade':'Termos de uso'}</h1>${privacy?'<h2>Dados e contato</h2><p>Este site apresenta informações profissionais e, nesta versão, não coleta dados por formulários. Ao utilizar links externos de contato ou agendamento, aplicam-se também as políticas das respectivas plataformas.</p><h2>Finalidade</h2><p>As informações do site servem para apresentar serviços e modalidades de atendimento. Nenhum conteúdo substitui avaliação individual, diagnóstico ou orientação em situações de urgência.</p>':'<h2>Conteúdo informativo</h2><p>O conteúdo deste site tem caráter informativo e não estabelece relação profissional por si só. O atendimento é iniciado apenas após contato, definição do serviço e combinação das condições aplicáveis.</p><h2>Uso responsável</h2><p>Não há promessa de resultado. A indicação e a modalidade de cada serviço dependem da demanda e das condições técnicas e éticas de atendimento.</p>'}<p>Luani dos Santos Paim — Psicóloga e Neuropsicóloga — CRP 07/30072.</p></article></main>${footer()}`}
 let html=path===''?home():pages[path]?servicePage(pages[path]):path==='agendamento'?booking():path==='conversa-inicial'?conversation():path==='privacidade'?legal('privacidade'):path==='termos'?legal('termos'):`${header()}<main><div class="page-hero"><h1>Página não encontrada</h1><p class="lead"><a href="/">Voltar ao início</a></p></div></main>${footer()}`;
 document.getElementById('app').innerHTML=html;
+document.querySelectorAll('a[href*="wa.me"]').forEach(link=>{
+  link.addEventListener('click',()=>{
+    if(typeof gtag==='function'){
+      gtag('event','conversion',{
+        'send_to':'AW-11387569070/DArCCKmz27UdEK6HgrYq'
+      });
+    }
+  });
+});
 const menu=document.querySelector('.menu-button');if(menu)menu.addEventListener('click',()=>{const links=document.querySelector('.nav-links');const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
